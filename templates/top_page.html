@@ -1,15 +1,20 @@
 {% extends "base.html" %} {% block body %}
 <div class="container">
     <div class="row">
+        {% for i in range(2) %}
         <div class="col s12 m4">
-            <a href="">
+            <a href="items/view/test">
                 <figure class="center-align">
-                    <img src="" height="200px" width="200px" />
-                    <figcaption>テキスト</figcaption>
+                    <img
+                        src="{{url_for('static', filename='img/test.png')}}"
+                        height="200px"
+                        width="200px"
+                    />
+                    <figcaption>物品{{i+1}}</figcaption>
                 </figure>
             </a>
         </div>
+        {% endfor %}
     </div>
 </div>
-
 {% endblock %}
