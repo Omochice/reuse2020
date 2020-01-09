@@ -52,8 +52,9 @@
                     <!-- <li><a href="#">大勧誘会</a></li> --> 
                 </ul>
                 <ul id="submenu1" class="dropdown-content">
-                    <li><a href="/items/categoryA">カテゴリA</a></li>
-                    <li><a href="#">サブメニュー2</a></li>
+                    {% for category in categories %}
+                    <li><a href="/items/{{category.en}}">{{category.jp}}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
         </nav>

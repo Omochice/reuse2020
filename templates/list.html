@@ -3,14 +3,14 @@
     <div class="row">
         {% for item in items %}
         <div class="col s12 m4">
-            <a href="">
+            <a href="/items/view/{{item.key}}">
                 <figure class="center-align">
                     <img
-                        src="{{url_for('img', result.img_path)}}"
+                        src="{{url_for('static', filename=item.img_path)}}"
                         height="200px"
                         width="200px"
                     />
-                    <figcaption>{{item.name}}</figcaption>
+                    <figcaption>{{item.item_id}}</figcaption>
                 </figure>
             </a>
         </div>
