@@ -5,8 +5,7 @@ import json
 
 app = Flask(__name__)
 
-with open("category.json", "r") as f:
-    categories = [{"en": item[0], "jp": item[1]} for item in json.load(f)]
+categories = [{"en": item[0], "jp": item[1]} for item in models.load_category_list()]
 
 
 @app.route('/')
@@ -42,7 +41,6 @@ def view_catogory(category):
 @app.route("/items/view/<key>")
 def view_item(key):
     item = models.get_item(key)
-    print(item)
     result = {
         "item_id": f"{item[1]}-{item[0]}",
         "img_path": f"img/{item[1]}-{item[0]}.jpg",
