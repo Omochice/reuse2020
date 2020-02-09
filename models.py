@@ -1,21 +1,30 @@
 import pandas as pd
 import json
 import os
+from collections import Counter
 
 pwd = os.path.dirname(os.path.abspath(__file__))
 
-csv_file = os.path.join(pwd, "test.csv")
+csv_file = os.path.join(pwd, "mock.csv")
 category_file = os.path.join(pwd, "category.json")
 
 
-def load_filled_csv(csv_name: str):
+def load_filled_csv(csv_name: str = csv_file):
     df = pd.read_csv(csv_name)
     return df.fillna("")
 
 
+def get_n_contents():
+    df = load_filled_csv(csv_file)
+    counter = Counter(df.query("not status == '売約済み'")["カテゴリ"])
+    d = load_category_list()
+    ## [{en: A, jp:冷蔵庫, n_content: 10}]
+    return [{"en": en, "jp": jp, "n_content": counter[en]} for (en, jp) in d]
+
+
 def get_category(key: str) -> list:
     df = load_filled_csv(csv_file)
-    return df.query(f"カテゴリ == '{key}'").values.tolist()
+    return df.query(f"カテゴリ == '{key}' and not status == '売約済み'").values.tolist()
 
 
 def get_item(key: str) -> list:

@@ -3,8 +3,9 @@
 
 <figure class="center-align">
     <img
-        src="{{ url_for('static', filename='img/test.png') }}"
+        src="{{ url_for('static', filename=item.img_path) }}"
         class="responsive-img"
+        alt="物品写真"
     />
 </figure>
 
@@ -38,7 +39,7 @@
     </tbody>
 </table>
 
-<p class="center-align">引取希望の方は<a href="#!">こちら</a></p>
+<p class="center-align">引取希望の方は<a href=https://docs.google.com/forms/d/1o6klIxA7o3-61J987qWOpqmewWotda3P_Pe8jZ-dki0/edit>こちら</a></p>
 <p class="center-align">(GoogleFormを開きます)</p>
 
 {% endblock %}

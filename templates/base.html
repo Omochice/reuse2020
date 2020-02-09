@@ -6,7 +6,7 @@
 <head>
     <meta
         name="keywords"
-        content="わどわ,wadowa,弘前大学,環境,サークル,Ｒくん,リユース市,再利用,家具,家電,新入生"
+        content="わどわ,wadowa,弘前大学,環境,サークル,Ｒくん,リユース市,再利用,家具,家電,新入生,青森"
     />
     <meta
         name="description"
@@ -45,8 +45,10 @@
                     <li><a href="/" class="brand-logo left">物品一覧</a></li>
                 </ul>
                 <ul class="right">
-                    <li><a href="#" class="dropdown-trigger" data-target="submenu1">カテゴリ</a></li>
-                    <li><a href="/about">購入について</a></li>
+                    <li><a href="#" class="dropdown-trigger" data-target="submenu1">カテゴリ▼</a></li>
+                    <li><a href="#" class="dropdown-trigger" data-target="submenu2">詳しく▼</a></li>
+
+                    <!-- <li><a href="/about">購入について</a></li> -->
                     <!--  -->
                     <!-- <li></li> -->
                     <!-- <li><a href="#">大勧誘会</a></li> --> 
@@ -55,6 +57,10 @@
                     {% for category in categories %}
                     <li><a href="/items/{{category.en}}">{{category.jp}}</a></li>
                     {% endfor %}
+                </ul>
+                <ul id="submenu2" class="dropdown-content">
+                    <li><a href="/about">購入について</a></li>
+                    <li><a href="/status">回収状況</a></li>
                 </ul>
             </div>
         </nav>

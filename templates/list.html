@@ -9,8 +9,11 @@
                         src="{{url_for('static', filename=item.img_path)}}"
                         height="200px"
                         width="200px"
+                        alt="物品写真"
                     />
-                    <figcaption>{{item.item_id}}</figcaption>
+                    <figcaption>
+                        {{item.item_id}} {{item.model_number}}
+                    </figcaption>
                 </figure>
             </a>
         </div>

@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block body %}
+<div class="conteiner">
+    <h4 class="center-align">現在の回収状況</h4>
+
+    <div class="row">
+        <div class="col s12 m4 push-m4">
+            <table class="striped">
+                <tr>
+                    <th class="center-align">カテゴリ</th>
+                    <th class="center-align">数</th>
+                </tr>
+                {% for content in contents %}
+                <tr>
+                    <td class="center-align">
+                        <a href="/items/{{content.en}}">{{content.jp}}</a>
+                    </td>
+                    <td class="center-align">{{content.n_content}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
