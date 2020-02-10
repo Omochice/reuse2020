@@ -4,27 +4,21 @@
 </title>
 
 <head>
-    <meta
-        name="keywords"
-        content="わどわ,wadowa,弘前大学,環境,サークル,Ｒくん,リユース市,再利用,家具,家電,新入生,青森"
-    />
-    <meta
-        name="description"
-        content="“わどわ”は弘前大学公認の環境サークルです。今年度もわどわでは、3月20、21日に弘前大学新入生を対象としたリユース市を文京キャンパスにて開催します。"
-    />
+    <meta name="keywords" content="わどわ,wadowa,弘前大学,環境,サークル,Ｒくん,リユース市,再利用,家具,家電,新入生,青森" />
+    <meta name="description" content="“わどわ”は弘前大学公認の環境サークルです。今年度もわどわでは、3月20、21日に弘前大学新入生を対象としたリユース市を文京キャンパスにて開催します。" />
     <title>第17回リユース市　提供物品一覧</title>
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
 
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
 
     <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -45,13 +39,8 @@
                     <li><a href="/" class="brand-logo left">物品一覧</a></li>
                 </ul>
                 <ul class="right">
-                    <li><a href="#" class="dropdown-trigger" data-target="submenu1">カテゴリ▼</a></li>
-                    <li><a href="#" class="dropdown-trigger" data-target="submenu2">詳しく▼</a></li>
-
-                    <!-- <li><a href="/about">購入について</a></li> -->
-                    <!--  -->
-                    <!-- <li></li> -->
-                    <!-- <li><a href="#">大勧誘会</a></li> --> 
+                    <li><a href="#" class="dropdown-trigger" data-target="submenu1">カテゴリ</a></li>
+                    <li><a href="#" class="dropdown-trigger" data-target="submenu2">詳しく</a></li>
                 </ul>
                 <ul id="submenu1" class="dropdown-content">
                     {% for category in categories %}
@@ -66,32 +55,33 @@
         </nav>
     </header>
 
-   
+
 </body>
-    <main>
-        {% block body %}
-        <!-- ここにメインコンテンツを書く -->
-        {% endblock %}
-    </main>
-    
-    <footer class="page-footer green">
-        <div class="container">
-            <div class="row">
-                <div class="col s4 center">
-                    <a class="white-text" href="http://hirodaiwadowa.web.fc2.com">わどわTOP</a>
-                </div>
-                <div class="col s4 center">
-                    <a class="white-text"href="https://twitter.com/hirodaiwadowa">わどわTwitter</a>
-                </div>
-                <div class="col s4 center">
-                    <a class="white-text"href="http://www.hirodaisai.net/shinkan20/index.html">大勧誘会TOP</a>
-                </div>
+<main>
+    {% block body %}
+    <!-- ここにメインコンテンツを書く -->
+    {% endblock %}
+</main>
+
+<footer class="page-footer green">
+    <div class="container">
+        <div class="row">
+            <div class="col s4 center">
+                <a class="white-text" href="http://hirodaiwadowa.web.fc2.com">わどわTOP</a>
             </div>
-            <div class="footer-copyright green">
-                <div class="container">
-                © 2005-2020 Wadowa of Hirosaki Univ All Rights Reserved.
-                </div>
+            <div class="col s4 center">
+                <a class="white-text" href="https://twitter.com/hirodaiwadowa">わどわTwitter</a>
+            </div>
+            <div class="col s4 center">
+                <a class="white-text" href="http://www.hirodaisai.net/shinkan20/index.html">大勧誘会TOP</a>
             </div>
         </div>
-    </footer>
+        <div class="footer-copyright green">
+            <div class="container">
+                © 2005-2020 Wadowa of Hirosaki Univ All Rights Reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
 </html>
