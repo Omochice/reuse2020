@@ -5,7 +5,7 @@ from collections import Counter
 
 pwd = os.path.dirname(os.path.abspath(__file__))
 
-csv_file = os.path.join(pwd, "mock.csv")
+csv_file = os.path.join(pwd, "data.csv")
 category_file = os.path.join(pwd, "category.json")
 
 
