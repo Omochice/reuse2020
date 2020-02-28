@@ -23,13 +23,15 @@ def rotateImage(img, orientation):
         img_rotate = img.transpose(Image.FLIP_TOP_BOTTOM)
     elif orientation == 5:
         #左右反転して90度回転
-        img_rotate = img.transpose(Image.FLIP_LEFT_RIGHT).transpose(Image.ROTATE_90)
+        img_rotate = img.transpose(Image.FLIP_LEFT_RIGHT).transpose(
+            Image.ROTATE_90)
     elif orientation == 6:
         #270度回転
         img_rotate = img.transpose(Image.ROTATE_270)
     elif orientation == 7:
         #左右反転して270度回転
-        img_rotate = img.transpose(Image.FLIP_LEFT_RIGHT).transpose(Image.ROTATE_270)
+        img_rotate = img.transpose(Image.FLIP_LEFT_RIGHT).transpose(
+            Image.ROTATE_270)
     elif orientation == 8:
         #90度回転
         img_rotate = img.transpose(Image.ROTATE_90)
@@ -62,10 +64,10 @@ def scale_down(path: str) -> Image:
     return resized
 
 
-def fill_backgound(img: Image) -> Image:
+def fill_background(img: Image) -> Image:
     filled_img = Image.new("RGB", (image_size, image_size), (256, 256, 256))
     size = img.size
-    if size[0] >= size[1]:    # width >= height
+    if size[0] >= size[1]:  # width >= height
         margin = (image_size - min(size)) // 2
         filled_img.paste(img, (0, margin))
     else:
@@ -86,4 +88,4 @@ if __name__ == "__main__":
         if os.path.exists(dst):
             continue
         else:
-            fill_backgound(scale_down(file)).save(dst)
+            fill_background(scale_down(file)).save(dst)
