@@ -53,7 +53,9 @@ def view_item(key):
     item = models.get_item(key)
     result = {
         "item_id": f"{item[1]}-{item[0]}",
-        "img_path": f"img/{item[1]}-{item[0]}.jpg",
+        "img_path": [f"img/{item[1]}-{item[0]}.jpg",
+                     f"img/{item[1]}-{item[0]}_1.jpg",
+                     f"img/{item[1]}-{item[0]}_2.jpg"],\
         "category": f"{item[1]}: {models.translate_catogory_name(item[1])}",
         "model_number": item[2],
         "price": item[3],

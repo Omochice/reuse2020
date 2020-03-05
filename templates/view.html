@@ -1,19 +1,59 @@
 <!-- 個別の物品ページ -->
 {% extends "base.html" %} {% block body %}
 
+<script>
+    image_0 = "{{ url_for('static', filename=item.img_path[0]) }}";
+    image_1 = "{{ url_for('static', filename=item.img_path[1]) }}";
+    image_2 = "{{ url_for('static', filename=item.img_path[2]) }}";
+</script>
+
 <figure class="center-align">
     <img
-        src="{{ url_for('static', filename=item.img_path) }}"
+        id="forcused_img"
+        src="{{ url_for('static', filename=item.img_path[0]) }}"
         class="responsive-img"
         alt="物品写真"
     />
 </figure>
 
+<div class="row">
+    <div class="col s4">
+        <figure class="center-align">
+            <img
+                src="{{ url_for('static', filename=item.img_path[0]) }}"
+                class="responsive-img"
+                alt="物品写真(小)"
+                onclick='ChangeImage("forcused_img", image_0)'
+[            />
+        </figure>
+    </div>
+    <div class="col s4">
+        <figure class="center-align">
+            <img
+                src="{{ url_for('static', filename=item.img_path[1]) }}"
+                class="responsive-img"
+                alt="物品写真(小)"
+                onclick='ChangeImage("forcused_img", image_1)'
+            />
+        </figure>
+    </div>
+    <div class="col s4">
+        <figure class="center-align">
+            <img
+                src="{{ url_for('static', filename=item.img_path[2]) }}"
+                class="responsive-img"
+                alt="物品写真(小)"
+                onclick='ChangeImage("forcused_img", image_2)'
+            />
+        </figure>
+    </div>
+</div>
+
 <table class="centered">
     <tbody>
         <tr>
             <td>値段</td>
-            <td>{{item.price}}</td>
+            <td>{{item.price}}</td
         </tr>
         <tr>
             <td>物品番号</td>
