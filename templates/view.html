@@ -1,12 +1,6 @@
 <!-- 個別の物品ページ -->
 {% extends "base.html" %} {% block body %}
 
-<script>
-    image_0 = "{{ url_for('static', filename=item.img_path[0]) }}";
-    image_1 = "{{ url_for('static', filename=item.img_path[1]) }}";
-    image_2 = "{{ url_for('static', filename=item.img_path[2]) }}";
-</script>
-
 <figure class="center-align">
     <img
         id="forcused_img"
@@ -17,43 +11,28 @@
 </figure>
 
 <div class="row">
-    <div class="col s4">
+    {% for path in item.img_path %}
+    <script>
+        path = "{{ url_for('static', filename=path) }}";
+    </script>
+    <div class="col s6">
         <figure class="center-align">
             <img
-                src="{{ url_for('static', filename=item.img_path[0]) }}"
-                class="responsive-img"
+                src="{{ url_for('static', filename=path) }}"
+                width="100vw"
                 alt="物品写真(小)"
-                onclick='ChangeImage("forcused_img", image_0)'
-[            />
-        </figure>
-    </div>
-    <div class="col s4">
-        <figure class="center-align">
-            <img
-                src="{{ url_for('static', filename=item.img_path[1]) }}"
-                class="responsive-img"
-                alt="物品写真(小)"
-                onclick='ChangeImage("forcused_img", image_1)'
+                onclick='ChangeImage("forcused_img")'
             />
         </figure>
     </div>
-    <div class="col s4">
-        <figure class="center-align">
-            <img
-                src="{{ url_for('static', filename=item.img_path[2]) }}"
-                class="responsive-img"
-                alt="物品写真(小)"
-                onclick='ChangeImage("forcused_img", image_2)'
-            />
-        </figure>
-    </div>
+    {% endfor %}
 </div>
 
 <table class="centered">
     <tbody>
         <tr>
             <td>値段</td>
-            <td>{{item.price}}</td
+            <td>{{item.price}}円</td
         </tr>
         <tr>
             <td>物品番号</td>
@@ -79,7 +58,7 @@
     </tbody>
 </table>
 
-<p class="center-align">引取希望の方は<a href=https://docs.google.com/forms/d/1o6klIxA7o3-61J987qWOpqmewWotda3P_Pe8jZ-dki0/edit>こちら</a></p>
+<p class="center-align">引取希望の方は<a href=https://docs.google.com/forms/d/1o6klIxA7o3-61J987qWOpqmewWotda3P_Pe8jZ-dki0/edit target="_blank" rel="noopener noreferrer">こちら</a></p>
 <p class="center-align">(GoogleFormを開きます)</p>
 
 {% endblock %}

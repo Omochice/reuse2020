@@ -25,3 +25,8 @@ main {
     font-size: 140%;
 }
 
+.img-responsive {
+    max-width: 200;
+    height: auto;
+    object-fit: cover;
+}

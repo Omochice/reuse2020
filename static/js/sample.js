@@ -6,9 +6,9 @@ $(document).ready(function() {
     $(".sidenav").sidenav();
 });
 
-function ChangeImage(imgid, newimg) {
-    console.log("hello");
-    document.getElementById(imgid).src = newimg;
+function ChangeImage(imgid) {
+    newimg = event.target;
+    document.getElementById(imgid).src = newimg.src;
     console.log(newimg);
 }
 
@@ -19,8 +19,3 @@ function change_text() {
 }
 
 function go_forward() {}
-
-document.addEventListener("DOMContentLoaded", function() {
-    var elems = document.querySelectorAll(".slider");
-    var instances = M.Slider.init(elems, options);
-});
