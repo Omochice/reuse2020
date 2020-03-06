@@ -30,3 +30,8 @@ main {
     height: auto;
     object-fit: cover;
 }
+
+ol {
+    margin-left: auto;
+    margin-right: auto;
+}

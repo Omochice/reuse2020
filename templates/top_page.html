@@ -1,53 +1,103 @@
 {% extends "base.html" %} {% block body %}
-<div class="conteiner">
+<div class="conteiner" id="holding-info" hidden>
     <!-- <h3 class="title">
         弘前大学に合格した皆さん！<br />合格おめでとうございます！
     </h3> -->
-    <br>
+    <br />
     <div class="row">
-    <div class="center col s12 m4 push-m4">
-        <h5><u>第17回リユース市開催情報</u></h5>
-        <table>
-            <tr>
-                <td rowspan="3">日時</td>
-                <td>2020年3月20日（金）13:30～16:00</td>
-            </tr>
-            <tr>
-                <td>2020年3月21日（土）10:00～14:30</td>
-            </tr>
-            <tr>
-                <td>初日の14:30までは弘前大学の新入生、在校生限定です</td>
-            </tr>
-            <tr>
-              <td rowspan="2">場所</td>
-              <td>弘前大学 文京キャンパス内 総合教育棟101講義室</td>
-            </tr>
-            <tr>
-              <td>大学正門入り口すぐ</td>
-            </tr>
-          </table>
+        <div class="center col s12 m4 push-m4">
+            <h5><u>第17回リユース市開催情報</u></h5>
+            <table>
+                <tr>
+                    <td rowspan="3">日時</td>
+                    <td>2020年3月20日（金）13:30～16:00</td>
+                </tr>
+                <tr>
+                    <td>2020年3月21日（土）10:00～14:30</td>
+                </tr>
+                <tr>
+                    <td>初日の14:30までは弘前大学の新入生、在校生限定です</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">場所</td>
+                    <td>弘前大学 文京キャンパス内 総合教育棟101講義室</td>
+                </tr>
+                <tr>
+                    <td>大学正門入り口すぐ</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
+
+<div class="conteinner" id="COVID-19">
+    <h4 class="center-align">
+        第17回リユース市における<br />
+        新型コロナウイルス感染症「COVID-19」への対応について(2020/03/06現在)
+    </h4>
     <p class="center-align">
+        サークル内及び大学当局との協議の結果、以下のように対応します。
+    </p>
+    <div class="row">
+        <div class="col s12 m8 l6 push-m2 push-l3">
+            <ol>
+                <li>以下の<b>会場開催は中止</b>とします。</li>
+                <table>
+                    <tr>
+                        <th>日時</th>
+                        <th>場所</th>
+                    </tr>
+                    <tr>
+                        <td>2020年3月20日</td>
+                        <td rowspan="2">弘前大学 総合教育棟101講義室</td>
+                    </tr>
+                    <tr>
+                        <td>2020年3月21日</td>
+                    </tr>
+                </table>
+
+                <li>
+                    物品購入方法を<b>インターネットによる受付のみ</b>とします。
+                </li>
+                <p>
+                    弘前市民の方も購入が可能です。<br />
+                    <b>複数の購入希望があった場合、弘前大学新入生を優先</b
+                    >させていただきます。<br />
+                    <b>弘前大学新入生: 1人2個まで / それ以外の方: 1人1個まで</b>
+                </p>
+                <li>
+                    弘前大学卒業生への<b>物品提供の受付・回収は継続</b>します。
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="conteinner center" id="conclusion">
+    <p>
         新生活開始に当たっては様々な費用がかかります。<br />
-        是非一度<span class="reuse-title">リユース市</span>の活用をご検討ください。
+        是非一度<span class="reuse-title">リユース市</span
+        >の活用をご検討ください。
     </p>
 
-    <div class="center">
-        <img
-            class="responsive-img"
-            src="static/logo.png"
-            alt="Logo"
-            width="300"
-            height="300"
-        />
-    </div>
+    <img
+        class="responsive-img"
+        src="static/logo.png"
+        alt="Logo"
+        width="300"
+        height="300"
+    />
 </div>
-
 
 <hr />
 
-
-<p class="center-align">物品回収依頼の方は<a href="https://docs.google.com/forms/d/e/1FAIpQLScVBmPUxnkwDAm7JsJNFktBb0LLIUkgKgW6ASkzvwF60N0UPA/viewform">こちら</a></p>
-{% endblock %}
+<div class="conteinner" id="additional">
+    <p class="center-align">
+        物品回収依頼の方は<a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScVBmPUxnkwDAm7JsJNFktBb0LLIUkgKgW6ASkzvwF60N0UPA/viewform"
+            >こちら</a
+        >
+    </p>
 </div>
+
+{% endblock %}
