@@ -14,7 +14,10 @@ def my_render(render_target: str, **kwargs):
 @app.route('/')
 def top_page():
     # top page
-    return my_render('top_page.html')
+    contents = models.get_n_contents()
+    n_sum = sum([c["n_content"] for c in contents])
+    return my_render('top_page.html', contents=contents, n_sum=n_sum)
+    # return my_render('top_page.html')
 
 
 @app.route("/status")
@@ -29,6 +32,11 @@ def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'favicon.ico',
                                mimetype='img/favicon.ico')
+
+
+@app.route("/covid-19")
+def covid():
+    return my_render("covid-19.html")
 
 
 @app.route("/about")
