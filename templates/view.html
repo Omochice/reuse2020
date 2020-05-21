@@ -2,24 +2,15 @@
 {% extends "base.html" %} {% block body %}
 
 <figure class="center-align">
-    <img
-        id="forcused_img"
-        src="{{ url_for('static', filename=item.img_path[0]) }}"
-        class="responsive-img"
-        alt="物品写真"
-    />
+    <img id="forcused_img" src="{{ url_for('static', filename=item.img_path[0]) }}" class="responsive-img" alt="物品写真" />
 </figure>
 
 <div class="row">
     {% for path in item.img_path %}
     <div class="col s6">
         <figure class="center-align">
-            <img
-                src="{{ url_for('static', filename=path) }}"
-                width="100vw"
-                alt="物品写真(小)"
-                onclick='ChangeImage("forcused_img")'
-            />
+            <img src="{{ url_for('static', filename=path) }}" width="100vw" alt="物品写真(小)"
+                onclick='ChangeImage("forcused_img")' />
         </figure>
     </div>
     {% endfor %}
@@ -29,8 +20,7 @@
     <tbody>
         <tr>
             <td>値段</td>
-            <td>{{item.price}}円</td
-        </tr>
+            <td>{{item.price}}円 -> 無料</td </tr>
         <tr>
             <td>物品番号</td>
             <td>{{item.item_id}}</td>
@@ -56,9 +46,9 @@
 </table>
 
 <div class="center">
-<p><strong>受付期間</strong></p>
-<ul class="center-align">
-    <!-- <s><li>第一期: 3月10日(火) ~ 3月19日(木)<br>
+    <p><strong>受付期間</strong></p>
+    <ul class="center-align">
+        <!-- <s><li>第一期: 3月10日(火) ~ 3月19日(木)<br>
         対象: 弘前大学新入生、在校生
     </li></s>
     <s><li>
@@ -71,17 +61,20 @@
         対象: 弘前大学新入生、在校生、弘前大学職員、一般市民<br>
         個数: 新入生4個まで、それ以外3個まで
     </li></s> -->
-    <strong><li>
-        第三期: 4月1日(水) ~ <br>
-        対象: 弘前大学新入生、在校生、弘前大学職員、一般市民<br>
-        個数: 5個まで<br>
-        引き渡し: 土曜日のみ
-    </li></strong>
-</ul>
+        <strong>
+            <li>
+                第三期: 4月1日(水) ~ 5月31日(日)<br />
+                対象: 弘前大学新入生、在校生、弘前大学職員、一般市民<br />
+                個数: 5個まで<br>
+                引き渡し: 土曜日、日曜日のみ
+            </li>
+        </strong>
+    </ul>
 
 </div>
 
-<p class="center-align">引取希望の方は<a href=https://forms.gle/eMKNbFWs1D3bPBcD7 target="_blank" rel="noopener noreferrer">こちら</a></p>
+<p class="center-align">引取希望の方は<a href=https://forms.gle/eMKNbFWs1D3bPBcD7 target="_blank"
+        rel="noopener noreferrer">こちら</a></p>
 <p class="center-align">(GoogleFormを開きます)</p>
 
 {% endblock %}
